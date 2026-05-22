@@ -72,17 +72,22 @@ FaceAuthSystem/
 ---
 
 ## How It Works
-Employee face images are stored locally inside the employees/ directory.
-During startup, the system generates embeddings for all employee images using FaceNet.
-When a new image is uploaded:
-RetinaFace detects faces
-FaceNet generates embeddings
-Cosine similarity compares embeddings with the employee database
-The system returns:
-Recognized employee name
-Access status
-Confidence score
-Annotated image with bounding boxes
+
+1. Employee face images are stored locally inside the `employees/` directory.
+
+2. During startup, the system generates embeddings for all employee images using FaceNet.
+
+3. When a new image is uploaded:
+   - RetinaFace detects faces
+   - FaceNet generates embeddings
+   - Cosine similarity compares embeddings with the employee database
+
+4. The system returns:
+   - Recognized employee name
+   - Access status
+   - Confidence score
+   - Annotated image with bounding boxes
+
 ---
 ## Installation
 
