@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition and Authentication</title>
+    <meta name="description" content="AI-powered face recognition for data center authentication">
+    <link rel="stylesheet" href="/static/style.css?v=9.0">
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">
+                🔐 <span class="gradient-text">Face Recognition</span> and Authentication
+            </h1>
+            <p class="hero-subtitle">
+                Secure Data Center Access Control
+            </p>
+            <div class="hero-badges">
+                <span class="badge">🤖 DeepFace AI</span>
+                <span class="badge">⚡ Real-time</span>
+                <span class="badge">🔒 Secure</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Upload Section -->
+        <section class="card" id="upload-section">
+            <div class="card-header">
+                <h2>📸 Upload Image for Authentication</h2>
+                <p>Upload an image containing one or more faces for recognition</p>
+            </div>
+
+            <div class="upload-area" id="upload-area">
+                <div class="upload-icon">📤</div>
+                <p class="upload-text">Drag & Drop your image here</p>
+                <p class="upload-hint">or click to browse (JPG, PNG, WebP supported)</p>
+                <input type="file" id="file-input" accept="image/*" hidden>
+            </div>
+
+            <div class="preview-container" id="preview-container" style="display: none;">
+                <img id="preview-image" alt="Preview">
+            </div>
+
+            <div class="preview-buttons" style="display: none;">
+                <button class="btn btn-primary" id="detect-upload-btn">
+                    🔍 Recognize Faces
+                </button>
+                <button class="btn btn-secondary" id="clear-btn">
+                    🗑️ Clear & Upload New
+                </button>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="card" id="results-section" style="display: none;">
+            <div class="card-header">
+                <h2>🎯 Recognition Results</h2>
+                <p id="results-summary">Found 0 face(s)</p>
+            </div>
+
+            <div class="results-image-container">
+                <img id="results-image" alt="Recognition Results">
+            </div>
+
+            <div id="detections-list" class="detections-list"></div>
+        </section>
+
+        <!-- Error Message -->
+        <div id="error-message" class="error-message" style="display: none;"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>🔐 Face Recognition and Authentication System</p>
+            <p class="footer-hint">Built with DeepFace AI + FastAPI | Secure Access Control</p>
+        </div>
+    </footer>
+
+    <script src="/static/app.js"></script>
+</body>
+
+</html>
