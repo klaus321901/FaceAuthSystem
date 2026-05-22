@@ -67,6 +67,8 @@ FaceAuthSystem/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
+
 ---
 
 ## How It Works
@@ -81,3 +83,152 @@ Recognized employee name
 Access status
 Confidence score
 Annotated image with bounding boxes
+---
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/klaus321901/FaceAuthSystem.git
+cd FaceAuthSystem
+```
+
+Create virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Activate virtual environment (Windows):
+
+```bash
+venv\Scripts\activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Run the Application
+
+```bash
+python main.py
+```
+
+Server starts at:
+
+```text
+http://localhost:8000
+```
+
+---
+
+## API Endpoints
+
+### 1. Recognize Faces
+
+```http
+POST /api/recognize
+```
+
+Upload an image and receive recognition results.
+
+### Sample Response
+
+```json
+{
+  "success": true,
+  "detections": [
+    {
+      "name": "John Doe",
+      "access": "granted",
+      "confidence": 0.91
+    }
+  ],
+  "count": 1,
+  "message": "Detected 1 face(s): 1 granted, 0 denied"
+}
+```
+
+---
+
+### 2. Health Check
+
+```http
+GET /api/health
+```
+
+Returns:
+- System status
+- Registered employee count
+- Model information
+
+---
+
+### 3. Employee List
+
+```http
+GET /api/employees
+```
+
+Returns all registered employees and image counts.
+
+---
+
+## Recognition Pipeline
+
+### Face Detection
+- RetinaFace detector backend
+
+### Face Embedding Model
+- FaceNet
+
+### Similarity Metric
+- Cosine Distance
+
+### Recognition Threshold
+
+```python
+threshold = 0.55
+```
+
+---
+
+## Security & Privacy
+
+The `employees/` folder is excluded from GitHub using `.gitignore` because it contains private employee face images.
+
+---
+
+## Future Improvements
+
+- Real-time webcam authentication
+- JWT-based secure login
+- Database integration
+- Face registration API
+- Liveness detection
+- Docker deployment
+- GPU acceleration
+- Authentication logs
+
+---
+
+## Requirements
+
+```text
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+deepface==0.0.75
+opencv-python==4.8.1.78
+tensorflow==2.12.0
+pillow==10.1.0
+numpy==1.24.3
+tf-keras==2.13.0
+```
+
+---
